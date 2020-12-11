@@ -6,11 +6,15 @@ using AutoMapper;
 using leave_management.Contracts;
 using leave_management.Data;
 using leave_management.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace leave_management.Controllers
 {
+    // Use Authorization library to access any of the actions here. OR, you can add
+    // above each action that needs it. In Rails, this is like the before_filter.
+    [Authorize(Roles = "Administrator")]
     public class LeaveTypesController : Controller
     {
         private readonly ILeaveTypeRepository _repo;
