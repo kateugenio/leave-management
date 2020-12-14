@@ -35,11 +35,16 @@
     <Folder Include="Repository\" />
     <Folder Include="Mappings\" />
     <Folder Include="Views\LeaveTypes\" />
+    <Folder Include="Views\LeaveAllocation\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml" />
     <Content Remove="Areas\Identity\Pages\Account\Logout.cshtml" />
     <Content Remove="Areas\Identity\Pages\Account\ResetPassword.cshtml" />
     <Content Remove="Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Remove="Areas\Identity\Pages\Account\Manage\Disable2fa.cshtml" />
+    <Content Remove="Areas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml" />
+    <Content Remove="Areas\Identity\Pages\Account\Manage\SetPassword.cshtml" />
+    <Content Remove="Areas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml" />
+    <Content Remove="Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml" />
   </ItemGroup>
 </Project>

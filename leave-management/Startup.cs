@@ -42,7 +42,13 @@ namespace leave_management
 
             services.AddAutoMapper(typeof(Maps));
 
-            services.AddDefaultIdentity<IdentityUser>()
+            // This use to reference IdentityUser, but we changed it to Employee data class
+            // Why? Because in LeaveAllocationController, in ListEmployees action, the view for this
+            // is trying to output Firstname, Lastname, and Email, which are custom attrs we
+            // set on Employee data class, which inherits from IdentityUser, but since this action has a
+            // var "employees" that returns a collection of IdentityUsers, it then can't map to EmployeeVM
+            // b/c IdentityUser doesn't have Firstname, Lastname, Email, etc.
+            services.AddDefaultIdentity<Employee>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
@@ -54,7 +60,7 @@ namespace leave_management
         public void Configure(
             IApplicationBuilder app,
             IWebHostEnvironment env,
-            UserManager<IdentityUser> userManager,
+            UserManager<Employee> userManager,
             RoleManager<IdentityRole> roleManager
         )
         {
