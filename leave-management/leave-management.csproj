@@ -36,6 +36,7 @@
     <Folder Include="Mappings\" />
     <Folder Include="Views\LeaveTypes\" />
     <Folder Include="Views\LeaveAllocation\" />
+    <Folder Include="Views\LeaveRequest\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Areas\Identity\Pages\Account\Logout.cshtml" />
