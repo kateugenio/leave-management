@@ -40,6 +40,8 @@ namespace leave_management
             services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
             services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
             services.AddAutoMapper(typeof(Maps));
 
             // This use to reference IdentityUser, but we changed it to Employee data class
